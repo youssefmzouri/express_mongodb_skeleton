@@ -9,7 +9,7 @@ RUN npm ci
 
 COPY . .
 
-COPY ./data ./dist/data
+# COPY ./data ./dist/data
 
 RUN npm run tsc
 

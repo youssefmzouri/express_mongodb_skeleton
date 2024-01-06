@@ -1,7 +1,5 @@
 import express from 'express'
-import positionRoutes from './positions'
-import transactionRoutes from './transactions'
-import portfolioRoutes from './portfolios'
+import userRoutes from './users'
 
 const router = express.Router()
 
@@ -11,8 +9,6 @@ router.get('/ping', (_req, res) => {
 })
 
 // Business routes
-router.use('/position', positionRoutes)
-router.use('/transaction', transactionRoutes)
-router.use('/portfolio', portfolioRoutes)
+router.use('/user', userRoutes)
 
 export default router

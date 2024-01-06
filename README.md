@@ -1,6 +1,6 @@
 # Description
 
-Technical test for flanks (NodeJS + Express + Typescript & MongoDB)
+Base project (NodeJS + Express + Typescript & MongoDB)
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ Technical test for flanks (NodeJS + Express + Typescript & MongoDB)
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/youssefmzouri/pt-flanks.git`
+1. Clone the repository: `git clone https://github.com/youssefmzouri/express_mongodb_skeleton.git`
 2. Install the dependencies: `npm install`
 3. Create the .env file in the project root.
 

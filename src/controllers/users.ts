@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { PaginateOptions } from 'mongoose'
-import Model from '../models/position'
+import Model from '../models/user'
 
 export const buildPaginateOptions = (query: any): PaginateOptions => {
   const { page, limit, offset, sort } = query
@@ -15,7 +15,7 @@ export const buildPaginateOptions = (query: any): PaginateOptions => {
   return paginateOptions
 }
 
-const PositionController = {
+const UserController = {
   getAll: (req: Request, res: Response) => {
     const paginateOptions = buildPaginateOptions(req.query)
     Model.paginate({}, paginateOptions)
@@ -27,37 +27,22 @@ const PositionController = {
         })
       })
       .catch((err: Error) => {
-        res.status(500).json({ message: 'Error getting positions: ' + err.message })
+        res.status(500).json({ message: 'Error getting users: ' + err.message })
       })
   },
 
   getOne: (req: Request, res: Response) => {
     Model.findById(req.params.id)
-      .then((position) => {
-        if (position === null) return res.status(404).json({ results: [] })
+      .then((user) => {
+        if (user === null) return res.status(404).json({ results: [] })
         res.json({
-          results: [position]
+          results: [user]
         })
       })
       .catch(() => {
-        res.status(500).json({ message: 'Internal server error getting position: ' + req.params.id })
-      })
-  },
-
-  getByPortfolio: (req: Request, res: Response) => {
-    const paginateOptions = buildPaginateOptions(req.query)
-    Model.paginate({ portfolio_id: req.params.client_id }, paginateOptions)
-      .then((resultPaginated) => {
-        const { docs, ...rest } = resultPaginated
-        res.json({
-          results: docs,
-          ...rest
-        })
-      })
-      .catch((err: Error) => {
-        res.status(500).json({ message: 'Error getting positions: ' + err.message })
+        res.status(500).json({ message: 'Internal server error getting user: ' + req.params.id })
       })
   }
 }
 
-export default PositionController
+export default UserController
