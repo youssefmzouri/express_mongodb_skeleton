@@ -1,0 +1,5 @@
+### Ping pong call
+GET http://localhost:3000/api/ping
+
+### Test path not found error
+GET http://localhost:3000/force-404

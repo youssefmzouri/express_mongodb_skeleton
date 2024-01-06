@@ -1,0 +1,6 @@
+/dist
+/node_modules
+.env
+.env.dev
+.~lock*
+random.js

@@ -1,0 +1,11 @@
+### Transactions call paginated
+GET http://localhost:3000/api/transaction
+
+### Transactions call paginated and query params (sort by operation_date)
+GET http://localhost:3000/api/transaction?limit=2&sort=operation_date
+
+### Transactions call by id with populated data
+GET http://localhost:3000/api/transaction/015fa738eab6317ebdcbdea1bd1cd69074a47e042370c4d09a1f69309b3d80e9
+
+### Transactions call by id without populated data (null)
+GET http://localhost:3000/api/transaction/e74bf101ca7a3b074c04350fdc555f0eb4972db5ca457888f8057e06ec84ac8c

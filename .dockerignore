@@ -1,0 +1,8 @@
+node_modules
+README.md
+dist
+*.http
+docker-compose.yml
+Dockerfile
+.env.example
+.~lock*
