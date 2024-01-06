@@ -15,7 +15,7 @@ Base project (NodeJS + Express + Typescript & MongoDB)
 
 1. Clone the repository: `git clone https://github.com/youssefmzouri/express_mongodb_skeleton.git`
 2. Install the dependencies: `npm install`
-3. Create the .env file in the project root.
+3. Create the .env file in the project root. (.env.dev will be needed if you want to run the project in dev mode)
 
 ## Initialize the app in dev mode
 1. Turn on mongo container: `docker run -p 27017:27017 mongo`
